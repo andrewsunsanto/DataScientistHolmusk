@@ -1,0 +1,30 @@
+UPDATE dbo.finalnew
+SET dbo.finalnew.gender = 'Male'
+WHERE dbo.finalnew.gender = 'm'
+UPDATE dbo.finalnew
+SET dbo.finalnew.gender = 'Female'
+WHERE dbo.finalnew.gender = 'f'
+UPDATE dbo.finalnew
+SET dbo.finalnew.race = 'Indian'
+WHERE dbo.finalnew.race = 'India'
+UPDATE dbo.finalnew
+SET dbo.finalnew.race = 'Chinese'
+WHERE dbo.finalnew.race = 'chinese'
+UPDATE dbo.finalnew
+SET dbo.finalnew.medical_history_3 = 1
+WHERE dbo.finalnew.medical_history_3 = 'Yes'
+UPDATE dbo.finalnew
+SET dbo.finalnew.medical_history_3 = 0
+WHERE dbo.finalnew.medical_history_3 = 'No'
+
+UPDATE dbo.finalnew
+SET dbo.finalnew.medical_history_2 = 2
+WHERE dbo.finalnew.medical_history_2 = 'NULL'
+UPDATE dbo.finalnew
+SET dbo.finalnew.medical_history_5 = 2
+WHERE dbo.finalnew.medical_history_5 = 'NULL'
+
+UPDATE dbo.finalnew
+SET dbo.finalnew.resident_status = 'Singapore citizen'
+WHERE dbo.finalnew.resident_status = 'Singaporean'
+SELECT * FROM dbo.finalnew;
