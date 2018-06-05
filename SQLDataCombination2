@@ -1,0 +1,5 @@
+SELECT *
+FROM dbo.bbd
+JOIN dbo.clinical_data
+ON dbo.bbd.patient_id = dbo.clinical_data.id and dbo.bbd.date_of_admission = dbo.clinical_data.date_of_admission
+ORDER BY dbo.bbd.amount DESC;
