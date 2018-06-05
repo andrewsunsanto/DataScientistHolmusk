@@ -16,6 +16,9 @@ UPDATE dbo.sumperoccurencedemo
 SET dbo.sumperoccurencedemo.race = 'Indian'
 WHERE dbo.sumperoccurencedemo.race = 'India'
 UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.race = 'Chinese'
+WHERE dbo.sumperoccurencedemo.race = 'chinese'
+UPDATE dbo.sumperoccurencedemo
 SET dbo.sumperoccurencedemo.medical_history_3 = 1
 WHERE dbo.sumperoccurencedemo.medical_history_3 = 'Yes'
 UPDATE dbo.sumperoccurencedemo
