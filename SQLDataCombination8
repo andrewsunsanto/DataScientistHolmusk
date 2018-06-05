@@ -1,0 +1,30 @@
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.medical_history_2 = NULL
+WHERE dbo.sumperoccurencedemo.medical_history_2 = 'NULL'
+
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.medical_history_5 = NULL
+WHERE dbo.sumperoccurencedemo.medical_history_5 = 'NULL'
+
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.gender = 'Male'
+WHERE dbo.sumperoccurencedemo.gender = 'm'
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.gender = 'Female'
+WHERE dbo.sumperoccurencedemo.gender = 'f'
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.race = 'Indian'
+WHERE dbo.sumperoccurencedemo.race = 'India'
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.medical_history_3 = 1
+WHERE dbo.sumperoccurencedemo.medical_history_3 = 'Yes'
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.medical_history_3 = 0
+WHERE dbo.sumperoccurencedemo.medical_history_3 = 'No'
+UPDATE dbo.sumperoccurencedemo
+SET dbo.sumperoccurencedemo.resident_status = 'Singapore citizen'
+WHERE dbo.sumperoccurencedemo.resident_status = 'Singaporean'
+
+
+SELECT * FROM dbo.sumperoccurencedemo
+ORDER BY dbo.sumperoccurencedemo.sum_amount
