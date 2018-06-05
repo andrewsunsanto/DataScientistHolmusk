@@ -112,7 +112,7 @@ y_pos = np.arange(len(para))
 #creation of bar chart
 plt.bar(y_pos, coeff, align='center', alpha=0.5)
 plt.xticks(y_pos, para, rotation=80)
-plt.ylabel('Degree of effect to bill amount', fontsize = 30)
+plt.ylabel('Coefficients', fontsize = 30)
 plt.title('Effect of Parameters to Bill Amount', fontsize = 40)
 
 #shows plot
