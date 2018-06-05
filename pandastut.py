@@ -35,7 +35,7 @@ Y = df.iloc[:,31].values
 
 #printing of sum_amount, which will be Y for regression as a dependent variable
 print ('This is sum_amount')
-print ('Y')
+print (Y)
 
 #printing is done to see Xg has an additional column of ones and encompasses all values
 print ('This is Xg plus one column of ones')
