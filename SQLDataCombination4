@@ -1,0 +1,9 @@
+UPDATE dbo.finalnewcleaned
+SET dbo.finalnewcleaned.medical_history_2 = NULL
+WHERE dbo.finalnewcleaned.medical_history_2 = 'NULL'
+
+UPDATE dbo.finalnewcleaned
+SET dbo.finalnewcleaned.medical_history_5 = NULL
+WHERE dbo.finalnewcleaned.medical_history_5 = 'NULL'
+
+SELECT * FROM dbo.finalnewcleaned
