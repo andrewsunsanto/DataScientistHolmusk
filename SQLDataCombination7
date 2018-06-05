@@ -1,0 +1,3 @@
+SELECT * FROM dbo.demographics
+JOIN dbo.sumperoccurence
+ON dbo.sumperoccurence.id = dbo.demographics.patient_id;
