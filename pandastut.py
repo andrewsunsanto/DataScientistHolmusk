@@ -7,7 +7,7 @@ import numpy as np
 style.use('fivethirtyeight')
 
 #dataimport
-df = pd.read_csv('finalnewcleanedblanks.csv')
+df = pd.read_csv('sumperoccurencedemocleaned.csv')
 
 #checking 5 first rows
 print(df.head())
@@ -17,14 +17,16 @@ df.dropna(inplace=True)
 
 #separating gender, race, and residential_status to make them unique parameters
 #gender is Xg
-Xg = df.iloc[:,7].values
+Xg = df.iloc[:,4].values
 Xg = np.c_[Xg, np.ones(len(Xg))]
 #race is Xr
-Xr = df.iloc[:,8].values
+Xr = df.iloc[:,5].values
 Xr = np.c_[Xr, np.ones(len(Xr))]
 #residential_status and the rest of data is Xt
-Xt = df.iloc[:,9:].values
-Y = df.iloc[:,6].values
+Xt = df.iloc[:,6:-1].values
+Y = df.iloc[:,31].values
+print ('This is sum_amount')
+print ('Y')
 
 #test print
 print ('This is Xg plus one column of ones')
@@ -69,5 +71,16 @@ print (Xt[0,:])
 #calculation
 X_1=sm.add_constant(Xt)
 results=sm.OLS(Y,X_1).fit()
+coeff = (results.params[1:])
 print (results.params)
-print(results.summary())
+print (results.summary())
+
+para = ('Female', 'Male', 'Chinese', 'Indian', 'Malay', 'Others', 'Foreigner', 'PR', 'Singapore citizen', 'days_in_clinic', 'medical_history_1', 'medical_history_2', 'medical_history_3', 'medical_history_4', 'medical_history_5','medical_history_6', 'medical_history_7', 'preop_medication_1', 'preop_medication_2', 'preop_medication_3', 'preop_medication_4', 'preop_medication_5', 'preop_medication_6', 'symptom_1', 'symptom_2', 'symptom_3', 'symptom_4', 'symptom_5', 'lab_result_1', 'lab_result_2', 'lab_result_3', 'weight', 'height')
+y_pos = np.arange(len(para))
+ 
+plt.bar(y_pos, coeff, align='center', alpha=0.5)
+plt.xticks(y_pos, para, rotation=90)
+plt.ylabel('Degree of effect to bill amount')
+plt.title('Effect of Parameters to Bill Amount')
+ 
+plt.show()
