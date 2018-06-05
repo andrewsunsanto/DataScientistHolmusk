@@ -1,0 +1,9 @@
+
+WITH pr AS (
+SELECT dbo.finalnewcleanedblanks.patient_id, dbo.finalnewcleanedblanks.date_of_admission, dbo.finalnewcleanedblanks.date_of_discharge, sum(dbo.finalnewcleanedblanks.amount) AS sum_amount
+FROM dbo.finalnewcleanedblanks
+GROUP BY dbo.finalnewcleanedblanks.patient_id, dbo.finalnewcleanedblanks.date_of_admission, dbo.finalnewcleanedblanks.date_of_discharge
+)
+SELECT * FROM dbo.clinical_data
+JOIN pr
+ON pr.patient_id = dbo.clinical_data.id AND pr.date_of_admission = dbo.clinical_data.date_of_admission AND pr.date_of_discharge = dbo.clinical_data.date_of_discharge;
