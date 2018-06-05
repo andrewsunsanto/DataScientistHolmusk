@@ -1,1 +1,16 @@
 
+WITH pr AS (
+      SELECT dbo.bill_id.bill_id, dbo.bill_id.patient_id, dbo.bill_id.date_of_admission, dbo.bill_amount.amount
+      FROM dbo.bill_id
+      JOIN dbo.bill_amount
+      ON dbo.bill_id.bill_id = dbo.bill_amount.bill_id
+   ),
+
+   pr2 AS (
+   SELECT pr.bill_id, pr.patient_id, pr.date_of_admission, pr.amount, dbo.demographics.gender, dbo.demographics.race, dbo.demographics.resident_status, dbo.demographics.date_of_birth
+   FROM pr
+   JOIN dbo.demographics
+    ON pr.patient_id = dbo.demographics.patient_id
+)
+
+SELECT * FROM pr2
