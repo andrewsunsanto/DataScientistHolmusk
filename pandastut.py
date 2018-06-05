@@ -93,10 +93,10 @@ print (Xr[:20,:])
 X = np.c_[Xg[:,:-1],Xr[:,:-1],Xt]
 #prints new X
 print ('New X')
-print (Xt)
+print (X)
 #prints one row data of X
 print ('One row of X')
-print (Xt[0,:])
+print (X[0,:])
 
 #calculation using statsmodels
 X_1=sm.add_constant(X)
